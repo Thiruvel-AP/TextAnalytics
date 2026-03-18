@@ -1,0 +1,22 @@
+# Run this from your project root
+New-Item data/.gitkeep -Force
+New-Item data/raw/.gitkeep -Force
+New-Item data/processed/.gitkeep -Force
+New-Item data/samples/.gitkeep -Force
+New-Item design/images/.gitkeep -Force
+New-Item design/drawio/.gitkeep -Force
+New-Item design/plantuml/.gitkeep -Force
+New-Item notebooks/01_eda/.gitkeep -Force
+New-Item notebooks/02_clustering/.gitkeep -Force
+New-Item notebooks/03_text_representation/.gitkeep -Force
+New-Item notebooks/04_pipeline/.gitkeep -Force
+New-Item notebooks/05_evaluation/.gitkeep -Force
+New-Item src/data/.gitkeep -Force
+New-Item src/features/.gitkeep -Force
+New-Item src/clustering/.gitkeep -Force
+New-Item src/pipeline/.gitkeep -Force
+New-Item src/evaluation/.gitkeep -Force
+New-Item src/utils/.gitkeep -Force
+New-Item reports/figures/.gitkeep -Force
+New-Item reports/tables/.gitkeep -Force
+New-Item tests/.gitkeep -Force
