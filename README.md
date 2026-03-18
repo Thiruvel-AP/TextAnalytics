@@ -46,9 +46,6 @@ This project analyzes customer feedback using various text analysis and clusteri
 ## Setup
 
 1. Install required packages:
-   ```bash
-   pip install -r requirements.txt
-   ```
 
 ## Directory Descriptions
 
