@@ -55,3 +55,6 @@ This project analyzes customer feedback using various text analysis and clusteri
 - **src/**: Python source code organized by functionality
 - **reports/**: Generated figures and tables for reporting
 - **tests/**: Unit tests for code validation
+
+## Trello Board 
+https://trello.com/invite/b/69bad5bb22fb691c08db9005/ATTI7ab96990d50f4b6b0d311f69f47c1b6619D4DFD1/ematm0067-g43-managementboard
