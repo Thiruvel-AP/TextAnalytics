@@ -1,0 +1,15 @@
+$folders = @(
+    "data/raw", "data/processed", "data/samples",
+    "design/images", "design/drawio", "design/plantuml",
+    "notebooks/01_eda", "notebooks/02_clustering",
+    "notebooks/03_text_representation", "notebooks/04_pipeline", "notebooks/05_evaluation",
+    "src/data", "src/features", "src/clustering",
+    "src/pipeline", "src/evaluation", "src/utils",
+    "reports/figures", "reports/tables",
+    "tests"
+)
+
+foreach ($f in $folders) {
+    New-Item -ItemType Directory -Path $f -Force
+    New-Item -ItemType File -Path "$f/.gitkeep" -Force
+}
