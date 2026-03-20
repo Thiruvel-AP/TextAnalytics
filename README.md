@@ -58,3 +58,6 @@ This project analyzes customer feedback using various text analysis and clusteri
 
 ## Trello Board 
 https://trello.com/invite/b/69bad5bb22fb691c08db9005/ATTI7ab96990d50f4b6b0d311f69f47c1b6619D4DFD1/ematm0067-g43-managementboard
+
+## Google Collab Notebook
+https://colab.research.google.com/drive/1585pIeWTvfiePhdiELvrqmmkzva1ytNk?usp=sharing
