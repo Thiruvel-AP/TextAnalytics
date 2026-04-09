@@ -1,0 +1,36 @@
+# --- Environment ---
+# User specified environment
+iata-cw/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# --- IDEs / Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Data & Reports ---
+# Excluding 'data' and 'reports' is standard if they contain 
+# large datasets or generated files that don't need versioning.
+data/
+reports/
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
