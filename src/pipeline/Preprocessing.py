@@ -4,16 +4,6 @@ import re
 from gensim.parsing.preprocessing import STOPWORDS
 from nltk.tokenize import word_tokenize
 from src.configfiles.config import custom_stopwords, tag_map
-import nltk
-from nltk.stem import WordNetLemmatizer
-from nltk import pos_tag
-
-nltk.download('punkt', quiet=True)
-nltk.download('punkt_tab', quiet=True)
-nltk.download('stopwords', quiet=True)
-nltk.download('wordnet', quiet=True)
-nltk.download('averaged_perceptron_tagger', quiet=True)
-nltk.download('averaged_perceptron_tagger_eng', quiet=True)
 
 # method to get the text and change to lower case
 def to_lower(text):
