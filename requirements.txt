@@ -17,6 +17,7 @@ gensim>=4.3
 contractions>=0.1.73
 vadersentiment>=3.3.2
 textblob>=0.18.0
+bertopic
 
 torch>=2.3
 tensorflow>=2.16
