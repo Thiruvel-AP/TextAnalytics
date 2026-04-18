@@ -1,0 +1,9 @@
+{
+  "model": "TextBlob",
+  "analyser": "PatternAnalyzer (default)",
+  "thresholds": {
+    "positive": 0.05,
+    "negative": -0.05
+  },
+  "saved_at": "2026-04-18T00:25:37.410897"
+}
