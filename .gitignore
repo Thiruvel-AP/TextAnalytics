@@ -33,4 +33,4 @@ reports/
 
 # --- OS Specific ---
 .DS_Store
-Thumbs.db
+Thumbs.dbmodels/topic_modelling/bertopic_model
