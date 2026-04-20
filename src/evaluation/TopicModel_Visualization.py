@@ -6,7 +6,7 @@ import seaborn as sns
 from gensim import matutils
 
 # Heat map for the topic models 
-def plot_topicModel_heatmap(model, num_words=10, save_path=None):
+def plot_topicModel_heatmap(model, num_words=10):
     topics = model.show_topics(formatted=False, num_words=num_words)
     topic_words = []
     for i, topic in topics:
@@ -19,12 +19,10 @@ def plot_topicModel_heatmap(model, num_words=10, save_path=None):
     plt.figure(figsize=(10, 8))
     sns.heatmap(df_pivot, annot=True, cmap="YlGnBu")
     plt.title("LDA Top Words Weight Heatmap")
-    if save_path:
-        plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.show()
 
 # Histogram of topics 
-def plot_topicModel_histogram(model, corpus, save_path=None):
+def plot_topicModel_histogram(model, corpus):
     # Check if the corpus is a scipy sparse matrix and convert if necessary
     if hasattr(corpus, "tocsr"):
         corpus = matutils.Sparse2Corpus(corpus, documents_columns=False)
@@ -43,7 +41,5 @@ def plot_topicModel_histogram(model, corpus, save_path=None):
     plt.xlabel('Topic ID')
     plt.ylabel('Number of Documents')
     plt.title('Distribution of Dominant Topics (LDA)')
-    if save_path:
-        plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.show()
 
