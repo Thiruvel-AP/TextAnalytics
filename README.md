@@ -61,3 +61,6 @@ https://trello.com/invite/b/69bad5bb22fb691c08db9005/ATTI7ab96990d50f4b6b0d311f6
 
 ## Google Collab Notebook
 https://colab.research.google.com/drive/1585pIeWTvfiePhdiELvrqmmkzva1ytNk?usp=sharing
+
+## Google Docs. - Report
+https://docs.google.com/document/d/1VO_XEv5D4y5fxlWlTrvToi3hPDUlGfPaGcILXEhZSTQ/edit?usp=sharing
