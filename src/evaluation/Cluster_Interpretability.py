@@ -4,7 +4,7 @@ import seaborn as sns
 import pandas as pd 
 import matplotlib.pyplot as plt
 
-def plot_cluster_top_words(X, cluster_labels, vectorizer, n_top=10, title_prefix="TF-IDF", save_path=None):
+def plot_cluster_top_words(X, cluster_labels, vectorizer, n_top=10, title_prefix="TF-IDF"):
     feature_names = vectorizer.get_feature_names_out()
     X_dense = X.toarray() if hasattr(X, 'toarray') else X
     n_clusters = len(set(cluster_labels))
@@ -26,12 +26,10 @@ def plot_cluster_top_words(X, cluster_labels, vectorizer, n_top=10, title_prefix
     fig.suptitle(f'{title_prefix} — Top {n_top} Words per Cluster (k={n_clusters})',
                 fontsize=13, fontweight='bold', y=1.02)
     plt.tight_layout()
-    if save_path:
-        plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.show()
 
 
-def plot_cluster_heatmaps(cluster_labels, df, title_prefix="TF-IDF", save_path=None):
+def plot_cluster_heatmaps(cluster_labels, df, title_prefix="TF-IDF"):
     fig, axes = plt.subplots(1, 2, figsize=(18, 5))
     ct = pd.crosstab(cluster_labels, df['Ticket Type'])
     ct_norm = ct.div(ct.sum(axis=1), axis=0)
@@ -42,11 +40,9 @@ def plot_cluster_heatmaps(cluster_labels, df, title_prefix="TF-IDF", save_path=N
     axes[1].set_title(f'{title_prefix} Clusters vs Ticket Type (Proportions)', fontweight='bold')
     axes[1].set_ylabel('Cluster')
     plt.tight_layout()
-    if save_path:
-        plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.show()
 
-def plot_cluster_size(kmeans_vectors, save_path=None):
+def plot_cluster_size(kmeans_vectors):
     fig, axes = plt.subplots(1, len(kmeans_vectors), figsize=(20, 10))
     for ax, (labels, name) in zip(axes, kmeans_vectors):
         unique, counts = np.unique(labels, return_counts=True)
@@ -60,6 +56,4 @@ def plot_cluster_size(kmeans_vectors, save_path=None):
         ax.set_xlabel('Cluster')
         ax.set_ylabel('Number of Tickets')
     plt.tight_layout()
-    if save_path:
-        plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.show()

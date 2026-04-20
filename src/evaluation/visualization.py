@@ -55,7 +55,7 @@ def visualize_embeddings(X, df, label_col='Ticket Type',
 
 # Compare the visualization between the vectors and embeddings
 def compare_representations(X_bow, X_tfidf, X_sbert, X_skipgram,df,
-                            label_col, method="pca", save_path=None):
+                            label_col, method="pca"):
 
     fig, axes = plt.subplots(1, 4, figsize=(32, 7))
 
@@ -79,6 +79,4 @@ def compare_representations(X_bow, X_tfidf, X_sbert, X_skipgram,df,
         fontsize=16, fontweight='bold', y=1.02
     )
     plt.tight_layout()
-    if save_path:
-        plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.show()

@@ -2,8 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 def visualize_cluster_stability(df, algorithm='KMeans', 
-                                   metrics=['Silhouette', 'ARI (Type)', 'NMI (Type)'],
-                                   save_path=None):
+                                   metrics=['Silhouette', 'ARI (Type)', 'NMI (Type)']):
     # Filter for the specific algorithm
     plot_df = df[df['Algorithm'] == algorithm].copy()
     
@@ -58,27 +57,10 @@ def visualize_cluster_stability(df, algorithm='KMeans',
             ax.set_xticks(k_values)
             ax.grid(True, linestyle='--', alpha=0.6)
             
-            """
-            # Free scaling
-            max_score = scores.max()
-            min_score = scores.min()
-            
-            if max_score < 0.05 and min_score > -0.05:
-                ax.set_ylim(-0.05, 0.1)
-            else:
-                padding_top = max_score * 0.2 if max_score > 0 else 0.05
-                ax.set_ylim(min(0, min_score - 0.05), max_score + padding_top)
-            """
-            
-            if metric == 'Silhouette':
-                ax.set_ylim(0, 0.4)
-            else:
-                ax.set_ylim(-0.05, 0.1)
-
+            # Set consistent Y-axis limits for normalized scores
+            ax.set_ylim(min(0, scores.min() - 0.05), max(1, scores.max() + 0.1))
 
     plt.suptitle(f'Comprehensive Clustering Analysis ({algorithm})', 
                  fontsize=18, fontweight='bold', y=1.02)
     plt.tight_layout()
-    if save_path:
-        plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.show()
