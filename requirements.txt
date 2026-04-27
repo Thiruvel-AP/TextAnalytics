@@ -1,0 +1,31 @@
+# Use the CPU-specific index for Torch to prevent timeouts
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+numpy>=1.26
+pandas>=2.2
+scipy>=1.12
+scikit-learn>=1.4
+datasets>=2.19
+kagglehub>=0.2.4
+python-dotenv>=1.0
+
+nltk>=3.8
+spacy>=3.7
+sentence-transformers>=2.7
+transformers>=4.40
+gensim>=4.3
+contractions>=0.1.73
+vadersentiment>=3.3.2
+textblob>=0.18.0
+bertopic
+
+torch>=2.3
+tensorflow>=2.16
+
+matplotlib>=3.8
+seaborn>=0.13
+plotly>=5.22
+jupyter>=1.0
+ipykernel>=6.29
+ipywidgets>=8.1
+tqdm>=4.66
