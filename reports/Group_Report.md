@@ -29,9 +29,18 @@ After multiple rounds of data cleaning, the improvement in the baseline model's 
 
 Topic modelling was used as the main issue-discovery component for uncovering latent complaint themes that are not fully reflected by the noisy ticket labels. Because the corpus contains repeated and template-like wording, we compared both **frequency-based** and **semantic** topic models rather than relying on a single representation. After preprocessing, the training corpus was modelled using **LDA** on sparse lexical features and **BERTopic** on SBERT sentence embeddings. For LDA, both **BoW** and **TF-IDF** document-term matrices were tested, and the number of topics was not fixed in advance; instead, the notebook evaluates **5–10 topics** and selects the better setting through coherence comparison. This makes the model choice evidence-driven: **BoW-LDA reaches its highest coherence at 9 topics (c_v = 0.4155)**, while **TF-IDF-LDA peaks at 10 topics (c_v = 0.4097)**. These results show that topic quality depends not only on representation but also on topic granularity, and they justify reporting the LDA coherence table rather than only describing the algorithm. 
 
-
 ![img](Group_Report.assets/Sat, 02 May 2026 162030.png)
 **Figure 1 LDA coherence table** 
+
+In parallel, **BERTopic** provides a semantic alternative that groups lexically different but meaningfully similar complaints. Its visual outputs also make the method more concrete: the topic overview shows that the largest discovered themes contain approximately **273, 269, 267, and 256** documents, while the corresponding bar chart highlights interpretable keyword sets such as *acts / unexpectedly / intermittent / sometimes / works* and *concerned / safe / security / ensure / like*. Together, these results show why topic modelling is a central analytical axis in the pipeline. 
+
+![BERTOPIC_topic_overview](Group_Report.assets/BERTOPIC_topic_overview.png)
+
+**Figure 2 BERTopic topic overview** 
+
+![BERTopic topic-word bar chart](Group_Report.assets/BERTopic topic-word bar chart.png)
+
+**Figure 3 BERTopic topic-word bar chart** 
 
 ## Sentiment Analysis:
 
