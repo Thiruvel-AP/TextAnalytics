@@ -1,4 +1,5 @@
-# Customer Feedback Analysis Project
+# G43 - IATA 
+# Task 4 - Mining Insights from Customer Feedback
 
 ## Project Structure
 
