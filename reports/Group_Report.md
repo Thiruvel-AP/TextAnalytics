@@ -27,13 +27,11 @@ After multiple rounds of data cleaning, the improvement in the baseline model's 
 
 ## Topic Modelling:
 
-Topic modelling is implemented as a primary analytical axis to uncover latent thematic structures within the customer support ticket corpus. Two complementary approaches are employed: probabilistic modelling using Latent Dirichlet Allocation (LDA) and embedding-based modelling using BERTopic.
+Topic modelling was used as the main issue-discovery component for uncovering latent complaint themes that are not fully reflected by the noisy ticket labels. Because the corpus contains repeated and template-like wording, we compared both **frequency-based** and **semantic** topic models rather than relying on a single representation. After preprocessing, the training corpus was modelled using **LDA** on sparse lexical features and **BERTopic** on SBERT sentence embeddings. For LDA, both **BoW** and **TF-IDF** document-term matrices were tested, and the number of topics was not fixed in advance; instead, the notebook evaluates **5–10 topics** and selects the better setting through coherence comparison. This makes the model choice evidence-driven: **BoW-LDA reaches its highest coherence at 9 topics (c_v = 0.4155)**, while **TF-IDF-LDA peaks at 10 topics (c_v = 0.4097)**. These results show that topic quality depends not only on representation but also on topic granularity, and they justify reporting the LDA coherence table rather than only describing the algorithm. 
 
-For LDA, the pipeline begins with vectorised representations of the corpus (BoW or TF-IDF).The resulting sparse document term matrix is converted into a Gensim compatible corpus using Sparse2Corpus, while the feature space from the vectorizer is mapped into an id2word dictionary to preserve termindex correspondence. The LDA model is then trained with a predefined number of topics (k= 20)and multiple passes (passes= 10)to ensure convergence. This process estimates document–topic and topic–word distributions, enabling each ticket to be represented as a probabilistic mixture of topics. Topic interpretability is achieved by extracting the highest-probability terms per topic.
 
-In parallel, BERTopic is applied directly to the raw text. It leverages SBERT embeddings to encode semantic relationships at the sentence level, followed by clustering in embedding space. A class-based TF-IDF mechanism is then used to derive representative keywords for each cluster topic. The model outputs topic assignments and probability scores for each document.
-
-This dual approach allows comparison between frequency-based and semantic topic representations, improving robustness and interpretability.
+![img](Group_Report.assets/Sat, 02 May 2026 162030.png)
+**Figure 1 LDA coherence table** 
 
 ## Sentiment Analysis:
 
