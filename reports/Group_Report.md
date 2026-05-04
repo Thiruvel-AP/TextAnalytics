@@ -64,7 +64,9 @@ The third improvement is the introduction of **BERTopic**, which uses **SBERT em
 
 For **sentiment analysis**, the proposed improvement is to compare **VADER** and **TextBlob** rather than relying on a single polarity tool. According to our methodology, sentiment is used as a second analytical lens, complementing topic modelling by capturing how customers feel about the issues they raise. The hypothesis is that **VADER will perform better on support-ticket language**, because it is designed for short, informal text and is more sensitive to negation, emphasis, and frustration markers. By contrast, **TextBlob** is expected to act as a broader baseline, producing smoother but less complaint-sensitive sentiment estimates. We therefore expect VADER to detect stronger negative sentiment in customer complaints, while TextBlob may classify more tickets as neutral or mildly polarised. Together, these two methods should provide a more robust view of emotional tone across discovered issue categories.
 
-
+## Hypotheses results and explanation
+The hypothesis results are partially supported. For topic modelling, the notebook shows that varying LDA topic number was useful: the best BoW-LDA model achieved its highest coherence at 9 topics (0.4155), while the best TF-IDF-LDA peaked at 10 topiccompatible with its assumptions. BERTopic appears to produce more fine-grained semantic groupings, but the notebook also shows outlier assignments (-1), suggesting that its semantic flexibility comes with reduced compactness on this repetitive corpus.
+For sentiment analysis, the hypothesis is more clearly supported. VADER assigns much stronger polarity than TextBlob: VADER labels 6000 tickets as positive and only 360 as neutral, whereas TextBlob produces a far more cautious distribution. Their agreement is only 45.63%, with weak-to-moderate score correlations (Pearson 0.3322, Spearman 0.3158). This confirms that VADER is more sensitive to complaint-style language, while TextBlob behaves as a smoother baseline.
 
 ## Evaluations :
 
